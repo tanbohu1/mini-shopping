@@ -1,0 +1,81 @@
+<view>
+  <!-- searchInput start -->
+  <searchInput></searchInput>
+  <!-- searchInput end -->
+
+  <!-- swiper start -->
+  <view class="index-swiper">
+    <swiper 
+      autoplay
+      interval="2000"
+      circular
+      indicator-dots
+    >
+      <swiper-item 
+        wx:for="{{swiperList}}"
+        wx:key="goods_id"
+      >
+        <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+          <image src="{{item.image_src}}" mode="widthFix"/>
+            
+        </navigator>
+          
+      </swiper-item>
+        
+    </swiper>
+    
+  </view>
+    
+  <!-- swiper end -->
+
+  <!-- cates start -->
+  <view class="index-cates">
+    <navigator
+      
+      wx:for="{{catesList}}"
+      wx:key="name"
+    >
+      <image src="{{item.image_src}}" mode="widthFix" />   
+    </navigator>
+      
+  </view>
+    
+  <!-- cates end -->
+
+  <!-- floor start -->
+  <view class="index-floor">
+  <!-- 外层循环 -->
+    <view 
+      class="floor-group"
+      wx:for="{{floorList}}"
+      wx:for-item="fitem"
+      wx:for-index="findex"
+      wx:key="floor_title"  
+    >
+      <view class="floor-title">
+        <image  src="{{fitem.floor_title.image_src}}" mode="widthFix"/> 
+      </view>
+      <!-- 内层循环 -->
+      <view class="product-list">
+        <navigator
+          wx:for="{{fitem.product_list}}" 
+          wx:for-item="sitem"
+          wx:for-index="sindex"
+          wx:key="name"
+          url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
+        >
+          <image src="{{sitem.image_src}}" mode="{{sindex==0?'widthFix':'scaleToFill'}}"/>
+            
+        </navigator>
+          
+      </view>
+        
+    </view>
+      
+  </view>
+    
+
+  <!-- floor end -->
+</view>
+  
+  

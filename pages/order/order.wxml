@@ -1,0 +1,25 @@
+<view class="order-wrap">
+    <goodsTab tabList="{{tabList}}" bindchangeTab="handleChangeTab">
+		<block>
+            <view class="goods-container">
+                <view class="goods-item" 
+                    wx:for="{{orderList.orders}}"
+                    wx:key="order_id"
+                >
+                    <view class="order-num item">
+                        <text class="num-title">订单编号</text>
+                        <text class="num">{{item.order_number}}</text>
+                    </view>
+                    <view class="order-price item">
+                        <text class="price-title">订单价格</text>
+                        <text class="price">￥{{item.order_price}}</text>
+                    </view>
+                    <view class="order-date item">
+                        <text class="data-title">订单日期</text>
+                        <text class="date">{{item.create_time}}</text>
+                    </view>
+                </view>  
+            </view>
+		</block>
+	</goodsTab>
+</view>

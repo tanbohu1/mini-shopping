@@ -1,0 +1,79 @@
+<view class="top-wrap">
+	<view class="login-wrap" wx:if="{{isLogin}}">
+		<button type="defalut" plain="true" bindtap="handleLogin">登录</button>	  
+	</view>
+	<view class="bg-image-wrap" wx:else>
+		<image class="bg-image" src="{{userInfo.avatarUrl}}" mode="scaleToFill" />
+		<view class="touxiang-wrap">
+			<image class="touxiang" src="{{userInfo.avatarUrl}}" mode="widthFix" />
+			<text class="nick-name">Tipo</text>
+		</view>
+	</view>
+
+</view>
+
+
+
+<view class="user-info-wrap">
+	<view class="my-collect user-info-item">
+		<navigator url="/pages/collect/collect" class="collect-shop collect-item">
+			<text class="collect-shop-num item-num">0</text>
+			<text class="collect-text item-text">收藏的商品</text>
+		</navigator>
+		<navigator url="/pages/collect/collect" class="collect-goods collect-item">
+			<text class="collect-goods-num item-num">0</text>
+			<text class="collect-text">收藏的店铺</text>
+		</navigator>
+		<navigator class="focus-goods collect-item">
+			<text class="focus-goods-num item-num">0</text>
+			<text class="collect-text">关注的商品</text>
+		</navigator>
+		<navigator class="my-history collect-item">
+			<text class="my-history-num item-num">0</text>
+			<text class="collect-text">我的足迹</text>
+		</navigator>
+	</view>
+
+	<view class="my-orders user-info-item">
+		<view class="my-order-title">我的订单</view>
+		<view class="orders-content">
+			<navigator url="/pages/order/order?type=1">
+				<view class="iconfont icon-ding_dan"></view>
+				<view class="order_name">全部订单</view>
+			</navigator>
+			<navigator url="/pages/order/order?type=2">
+				<view class="iconfont icon-fukuantongzhi"></view>
+				<view class="order_name">待付款</view>
+			</navigator>
+			<navigator url="/pages/order/order?type=3">
+				<view class="iconfont icon-receipt-address"></view>
+				<view class="order_name">待收货</view>
+			</navigator>
+			<navigator url="/pages/order/order?type=4">
+				<view class="iconfont icon-tuihuotuikuan_dianpu"></view>
+				<view class="order_name">退款/退货</view>
+			</navigator>
+		</view>
+	</view>
+
+	<view class="my-address user-info-item">
+		<navigator url="">
+			收货地址管理
+		</navigator>
+	</view>
+
+	<view class="app-info-wrap user-info-item">
+		<navigator url="" class="tel-server">
+			<text >联系客服</text>
+			<text >400-6180800</text>
+		</navigator>
+		<navigator url="">
+			意见反馈
+		</navigator>
+		<navigator url="">
+			关于我们
+		</navigator>
+
+	</view>
+
+</view>

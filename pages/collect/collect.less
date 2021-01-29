@@ -1,0 +1,50 @@
+.goods-container {
+    .goods-tag-wrap{
+        height: 80rpx;
+        line-height: 80rpx;
+        padding-left: 30rpx;
+        border-bottom: 1px solid rgb(224, 217, 217);
+        .tag-item{
+            border: 1px solid gray;
+            margin: 5rpx 20rpx;
+            padding: 10rpx;
+        }
+        .tag-active{
+            color:var(--themeColor)
+        }
+    }
+    .goods-item {
+        display              : grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows   : 300rpx;
+        border-bottom        : 1px solid #cccccc;
+
+        image {
+            width  : 100%;
+            padding: 20rpx;
+        }
+
+        .goods-text {
+            display        : flex;
+            // height: 250rpx;
+            flex-direction : column;
+            justify-content: space-around;
+
+            .goods-des {
+                font-size         : 30rpx;
+                width: 90%;
+                // height: 150rpx;
+                overflow          : hidden; //超出隐藏
+                text-overflow     : ellipsis; //超出文本设置为...
+                display           : -webkit-box; //将div1转换为盒子模型
+                -webkit-line-clamp: 2; //设置div1的文本为2行
+                -webkit-box-orient: vertical; //从顶部向底部垂直布置子元素
+            }
+
+            .goods-price {
+                color    : rgb(179, 31, 31);
+                font-size: 45rpx;
+            }
+        }
+    }
+}

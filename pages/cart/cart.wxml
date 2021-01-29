@@ -1,0 +1,70 @@
+<view class="address-wrap">
+	<view class="address-btn" wx:if="{{addressInfo.addressName==''}}">
+		<button bindtap="addAddress">+ 添加地址</button>
+	</view>
+	<view class="address-info" wx:else>
+		<view class="address-left">
+			收货地址：
+		</view>
+		<view class="address-right">
+			<view class="address-name">{{addressInfo.addressName}}</view>
+			<view class="tel-num">{{addressInfo.telNumber}}</view>
+		</view>
+
+	</view>
+
+</view>
+<view class="carts-wrap">
+	<view class="carts-title">购物车</view>
+	<view class="carts-list">
+		<view 
+            class="carts-item" 
+            wx:for="{{cartList}}"
+            wx:key="index"
+        >
+			<checkbox-group class="check" data-index="{{index}}" bindchange="handleCheckItem">
+				<checkbox checked="{{item.checked}}">
+
+				</checkbox>
+			</checkbox-group>
+			<navigator class="image-wrap" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+				<image src="{{item.pics[0].pics_mid}}" mode="widthFix" />
+			</navigator>
+			<view class="goods-info">
+				<view class="goods-name">{{item.goods_name}}</view>
+				<view class="price-wrap">
+					<text class="price-text">￥{{item.goods_price}}</text>
+					<view class="num-opreation">
+						<button data-opreation="sub" data-index="{{index}}" bindtap="handleOpreation">-</button>
+						<text class="goods-num">{{item.num}}</text>
+						<button data-opreation="plus" data-index="{{index}}" bindtap="handleOpreation">+</button>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="bottom-wrap">
+	<view class="check-all">
+		<checkbox-group bindchange="handleCheckAll">
+			<checkbox checked="{{checkedAll}}">
+
+			</checkbox>
+		</checkbox-group>
+		<text class="check-all-text">
+            全选
+        </text>
+	</view>
+
+	<view class="total-wrap">
+		<view class="total-price">
+			<view class="price">￥{{totalPrice}}</view>
+			<view class="trafic-fee">含运费</view>
+		</view>
+		<view class="pay-btn" bindtap="handlePay">
+			结算({{totalNum}})
+		</view>
+
+	</view>
+</view>

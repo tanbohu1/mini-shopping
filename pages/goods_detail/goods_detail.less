@@ -1,0 +1,105 @@
+.swiper-goods{
+    height: 500rpx;
+    .swiper-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        image{
+            width: 60%;
+        }
+    }
+}
+
+.goods-item{
+    border-top: 2rpx solid #eeeeee;
+    height: 200rpx;
+    border-bottom: 10rpx solid #eeeeee;
+    .goods-price{
+        font-size: 30rpx;
+        padding: 15rpx;
+        color:var(--themeColor)
+    }
+    .goods-des{
+        display: flex;
+        // height: 100rpx;
+        padding: 5rpx 8rpx;
+        .goods-name{
+            flex:5;
+            overflow          : hidden; //超出隐藏
+            text-overflow     : ellipsis; //超出文本设置为...
+            display           : -webkit-box; //将div1转换为盒子模型
+            -webkit-line-clamp: 2; //设置div1的文本为2行
+            -webkit-box-orient: vertical;
+            border-right: 1px solid #ccc;
+        }
+        .goods-collect{
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.goods-detail{
+    padding: 15rpx;
+    .detail-title{
+        font-size: 40rpx;
+        padding: 10rpx;
+        color: var(--themeColor);
+        font-weight: 300;
+    }
+    margin-bottom: 100rpx;
+}
+
+
+.tools{
+    background-color: #fff;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-around;
+    height: 100rpx;
+    align-items: center;
+
+    .tool-item{
+        // border-left: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        position: relative;
+        button{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+    .add-car-btn{
+        background-color: rgb(228, 73, 13);
+        font-size: 30rpx;
+        font-weight: 600;
+        // align-self: stretch;
+        color: beige;
+        height: 100%;
+        // width: 100%;
+        flex: 2;
+    }
+    .buy-btn{
+        background-color: rgb(255, 8, 0);
+        font-size: 30rpx;
+        font-weight: 600;
+        color: beige;
+        // align-self: stretch;
+        height: 100%;
+        // width: 100%;
+        flex: 2;
+    }
+}

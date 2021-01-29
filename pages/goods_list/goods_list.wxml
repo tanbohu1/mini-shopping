@@ -1,0 +1,38 @@
+<view class="goods-list">
+	<searchInput></searchInput>
+	<goodsTab tabList="{{tabList}}" bindchangeTab="handleChangeTab">
+		<block 
+            wx:if="{{tabList[0].active}}"
+        >
+            <view class="goods-container">
+                <navigator 
+                    class="goods-item"
+                    wx:for="{{goodsList}}"
+                    wx:key="goods_id"
+                    url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
+                >
+                    <image src="{{item.goods_small_logo}}" mode="widthFix"/>
+                    <view class="goods-text">
+                        <view class="goods-des">
+                            {{item.goods_name}}
+                        </view>
+                        <view class="goods-price">
+                            ￥{{item.goods_price}}
+                        </view>
+                    </view>
+                </navigator>
+                  
+            </view>
+		</block>
+        <block 
+            wx:if="{{tabList[1].active}}"
+        >
+		1
+		</block>
+        <block 
+            wx:if="{{tabList[2].active}}"
+        >
+		2
+		</block>
+	</goodsTab>
+</view>

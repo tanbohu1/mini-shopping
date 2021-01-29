@@ -1,0 +1,1 @@
+.auth-wraper{height:100rpx;display:flex;justify-content:center;align-items:center;font-size:35rpx}.auth-wraper button{width:80%}

@@ -1,0 +1,167 @@
+.address-wrap{
+    height: 150rpx;
+    .address-btn{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+            width: 60%;
+        }
+    }
+    .address-info{
+        display: flex;
+        height: 100%;
+        .address-left{
+            width: 25%;
+            font-size: 35rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #cccccc;
+        }
+        .address-right{
+            padding-left: 20rpx;
+            width: 80%;
+            font-size: 30rpx;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+
+}
+
+.carts-wrap{
+    padding-bottom: 100rpx;
+    .carts-title{
+        height: 100rpx;
+        line-height: 100rpx;
+        font-size: 45rpx;
+        color: var(--themeColor);
+        font-weight: 400;
+        padding-left: 40rpx;
+        border-bottom: 1px solid rgb(238, 202, 202);
+        border-top: 1px solid rgb(238, 202, 202);
+    }
+    .carts-list{
+        .carts-item{
+                display: flex;
+                height: 300rpx;
+                border-bottom: 1px solid #cccccc;
+            .check{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .image-wrap{
+                flex: 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                image{
+                    width: 80%;
+                }
+            }
+            .goods-info{
+                flex: 4;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                .goods-name{
+                    font-size: 30rpx;
+                    display: -webkit-box;
+                    overflow: hidden; 
+                    text-overflow     : ellipsis; //超出文本设置为...              
+                    -webkit-line-clamp: 2; //设置div1的文本为2行
+                    -webkit-box-orient: vertical;
+                }
+                .price-wrap{
+                    display: flex;
+                    justify-content: space-between;
+                    .price-text{
+                        font-size: 35rpx;
+                        color: var(--themeColor);
+                    }
+                    .num-opreation{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 250rpx;
+                        .goods-num{
+                            width: 80rpx;
+                            font-size: 35rpx;
+                            text-align: center;
+                            border: 1px solid #cccccc;
+                        }
+                        button{
+                            width: 50rpx;
+                            height: 50rpx;
+                            padding: 0 0;
+                            line-height: 50rpx;
+                            text-align: center;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.bottom-wrap{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    border-top: 1px solid rgb(199, 195, 195);
+    .check-all{
+        flex: 2;
+        display: flex;
+        // justify-content: center;
+        pad: 10rpx 30rpx;
+        margin-left: 20rpx;
+        align-items: center;
+        .check-all-text{
+            padding: 0 10rpx;
+            font-size: 40rpx;
+            font-weight: 400;
+            line-height: 0rpx;
+        }
+    }
+    .total-wrap{
+        flex: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .total-price{
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .price{
+                font-size: 40rpx;
+                color: var(--themeColor);
+            }
+            .trafic-fee{
+                font-size: 20rpx;
+                color:#554e4e;
+            }
+        }
+        .pay-btn{
+            flex: 2;
+            text-align: center;
+            font-size: 40rpx;
+            height: 100%;
+            color: #fff;
+            line-height: 97rpx;
+            background-color: var(--themeColor);
+        }
+    }
+}

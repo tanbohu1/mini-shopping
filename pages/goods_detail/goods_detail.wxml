@@ -1,0 +1,72 @@
+<swiper 
+    class="swiper-goods" 
+    indicator-dots 
+    autoplay 
+    circular 
+    interval="2000"
+>
+	<swiper-item 
+        class="swiper-item" 
+        wx:for="{{goodsObj.pics}}" 
+        wx:key="goods_id"
+        bindtap="handlePreviewImage"
+        data-index="{{index}}"
+    >
+		<image src="{{item.pics_mid_url}}" mode="widthFix" />
+
+	</swiper-item>
+
+
+</swiper>
+
+<view class="goods-item">
+    <view class="goods-price">
+        ￥{{goodsObj.goods_price}}
+    </view>
+    <view class="goods-des">
+        <view class="goods-name">
+        {{goodsObj.goods_name}}
+        </view>
+        <view class="goods-collect" bindtap="handleCollect">
+            <text class="iconfont {{collected?'icon-shoucang1':'icon-shoucang'}}"></text>
+            <view class="collect-text">收藏</view>
+        </view>
+    </view>    
+</view>
+<view class="goods-detail">
+    <view class="detail-title">图文详情</view>
+    <rich-text class="" nodes="{{goodsObj.goods_introduce}}">
+</rich-text>
+  
+</view>
+
+<view class="tools">
+    <view class="tool-item">
+        <text class="iconfont icon-kefu"></text>
+        <view>
+            客服
+        </view>
+        <button open-type="contact"></button>
+    </view>
+    <view class="tool-item">
+        <text class="iconfont icon-yixianshi-"></text>
+        <view>
+            分享
+        </view>
+        <button open-type="share"></button>
+    </view>
+    <navigator url='/pages/cart/cart' open-type="switchTab" class="tool-item">
+        <text class="iconfont icon-gouwuche"></text>
+        <view>
+            购物车
+        </view>
+    </navigator>
+    <view class="tool-item add-car-btn">
+        加入购物车
+        <button bindtap="addToCart"></button>
+    </view>
+    <view class="tool-item buy-btn">
+        立即购买
+        <button open-type=""></button>
+    </view>
+</view>

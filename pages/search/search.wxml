@@ -1,0 +1,24 @@
+<view class="search-wrap">
+    <input 
+        class="input-content" 
+        bindinput="bindKeyInput" 
+        placeholder="请输入查找内容"
+        value="{{searchName}}"
+    />
+    <button hidden="{{isHidden}}" 
+        class="mini-btn" 
+        plain="true" 
+        type="default" 
+        size="mini"
+        bindtap="cancelSearch"
+    >取消</button>
+      
+</view>
+<view class="list-wrap">
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="list-item" 
+        wx:for="{{goodsList}}"
+        wx:key="goods_id"
+    >
+       {{item.goods_name}}
+    </navigator>
+</view>

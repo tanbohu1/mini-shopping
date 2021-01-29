@@ -1,0 +1,51 @@
+<view class="address-wrap">
+	<view class="address-info">
+		<view class="address-left">
+			收货地址：
+		</view>
+		<view class="address-right">
+			<view class="address-name">{{addressInfo.addressName}}</view>
+			<view class="tel-num">{{addressInfo.telNumber}}</view>
+		</view>
+
+	</view>
+
+</view>
+<view class="carts-wrap">
+	<view class="carts-title">购物车</view>
+	<view class="carts-list">
+		<view 
+            class="carts-item" 
+            wx:for="{{cartList}}"
+            wx:key="index"
+        >
+			<navigator class="image-wrap" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+				<image src="{{item.pics[0].pics_mid}}" mode="widthFix" />
+			</navigator>
+			<view class="goods-info">
+				<view class="goods-name">{{item.goods_name}}</view>
+				<view class="price-wrap">
+					<text class="price-text">￥{{item.goods_price}}</text>
+					<view class="num-opreation">
+						
+						<text class="goods-num">×{{item.num}}</text>
+						
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="bottom-wrap">
+	<view class="total-wrap">
+		<view class="total-price">
+			<view class="price">￥{{totalPrice}}</view>
+			<view class="trafic-fee">含运费</view>
+		</view>
+		<view class="pay-btn" bindtap="handlePay">
+			支付({{totalNum}})
+		</view>
+
+	</view>
+</view>
